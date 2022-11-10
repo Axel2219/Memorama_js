@@ -16,16 +16,16 @@
                 <div class="col-12">
                     <h1 class="text-center">Juego de memorama</h1>
                     <p>
-                        <span class="h5 btn btn-primary">Intentos: </span>
-                        {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp;<span class="h5 btn btn-success">Aciertos:
+                        <span class="h5 btn btn-primary color">Intentos: </span>
+                        {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp;<span class="h5 btn btn-success color">Aciertos:
                         </span> {{aciertos}}
                         
                     </p>
                 </div>
             </div>
             <div v-for="(fila, indiceFila) in memorama" :key="indiceFila"
-                class="row">
-                <div :key="indiceFila+''+indiceImagen" class="col-2 mx-auto"
+                class="row" id="move">
+                <div :key="indiceFila+''+indiceImagen" class="col-2"
                     v-for="(imagen, indiceImagen) in fila">
                     <div class="mb-3">
                         <img @click="voltear(indiceFila, indiceImagen)"
